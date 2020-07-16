@@ -1,0 +1,25 @@
+{
+	"name": "react-slack-clone",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"moment": "*",
+		"react": "*",
+		"react-avatar-editor": "*",
+		"react-color": "*",
+		"react-dom": "*",
+		"react-redux": "*",
+		"react-router-dom": "*",
+		"react-scripts": "*",
+		"redux": "*",
+		"redux-devtools-extension": "*",
+		"semantic-ui-css": "*",
+		"semantic-ui-react": "*"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+	}
+}
