@@ -77,7 +77,6 @@ class Register extends React.Component {
 					this.state.password
 				)
 				.then((createdUser) => {
-					console.log(createdUser);
 					createdUser.user
 						.updateProfile({
 							displayName: this.state.username,
@@ -86,9 +85,7 @@ class Register extends React.Component {
 							)}?d=identicon`,
 						})
 						.then(() => {
-							this.saveUser(createdUser).then(() => {
-								console.log('user saved');
-							});
+							this.saveUser(createdUser).then(() => {});
 						})
 						.catch((err) => {
 							console.error(err);

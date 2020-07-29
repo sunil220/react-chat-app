@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { Header, Segment, Input, Icon } from 'semantic-ui-react';
 export default class MessagesHeader extends Component {
 	render() {
+		const {
+			channelName,
+			numUniqueUsers,
+			onSearchChange,
+			searchLoading,
+			isPrivateChannel,
+			handleStar,
+			isChannelStarred,
+		} = this.props;
 		return (
 			<Segment clearing>
 				<Header
@@ -11,14 +20,25 @@ export default class MessagesHeader extends Component {
 					style={{ marginBottom: 0 }}
 				>
 					<span>
-						Channel
-						<Icon name={'star outline'} color="black" />
+						{channelName}
+						{!isPrivateChannel && (
+							<Icon
+								style={{ cursor: 'pointer' }}
+								name={
+									isChannelStarred ? 'star' : 'star outline'
+								}
+								onClick={handleStar}
+								color={isChannelStarred ? 'yellow' : 'black'}
+							/>
+						)}
 					</span>
-					<Header.Subheader>2 Users</Header.Subheader>
+					<Header.Subheader>{numUniqueUsers}</Header.Subheader>
 				</Header>
 				{/* Channel Search Input */}
 				<Header floated="right">
 					<Input
+						loading={searchLoading}
+						onChange={onSearchChange}
 						size="mini"
 						icon="search"
 						name="searchTerm"

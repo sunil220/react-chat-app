@@ -36,9 +36,7 @@ class Login extends React.Component {
 					this.state.email,
 					this.state.password
 				)
-				.then((signedInUser) => {
-					console.log(signedInUser);
-				})
+				.then((signedInUser) => {})
 				.catch((err) => {
 					console.error(err);
 					this.setState({
